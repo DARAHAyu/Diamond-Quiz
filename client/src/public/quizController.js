@@ -32,7 +32,15 @@ function checkAnswer(choice) {
         displayQuestion();
     } else {
         alert(`クイズ終了！あなたのスコアは ${score} / ${quizData.length} です。`);
+        resetQuiz();
     }
+}
+
+// もしクイズが終了したら、最初の質問を表示する
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    displayQuestion();
 }
 
 // クイズの初期表示
