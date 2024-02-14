@@ -10,8 +10,10 @@ function shuffle(array) {
     }
 }
 
+// クイズ開始時に選択肢をシャッフル
+shuffle(quizData);
+
 function displayQuestion() {
-    shuffle(quizData);
     const question = document.getElementById('question');
     const scoreDisplay = document.getElementById('score');
     
@@ -48,6 +50,7 @@ function checkAnswer(choice) {
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    shuffle(quizData);
     displayQuestion();
 }
 
