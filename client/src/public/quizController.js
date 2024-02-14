@@ -31,7 +31,7 @@ function checkAnswer(choice) {
     if (currentQuestionIndex < quizData.length) {
         displayQuestion();
     } else {
-        alert(`クイズ終了！あなたのスコアは ${score} / ${quizData.length} です。`);
+        alert(`クイズ終了！あなたのスコアは ${score} 点です。`);
         resetQuiz();
     }
 }
