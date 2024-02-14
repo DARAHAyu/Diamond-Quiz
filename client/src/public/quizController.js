@@ -3,7 +3,15 @@ import quizData  from "../data/quizdata.js";
 let currentQuestionIndex = 0;
 let score = 0;
 
+function shuffle(array) {
+    for (let i = (array.length - 1); i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 function displayQuestion() {
+    shuffle(quizData);
     const question = document.getElementById('question');
     const scoreDisplay = document.getElementById('score');
     
