@@ -31,10 +31,32 @@ function displayQuestion() {
 
 function checkAnswer(choice) {
     if (choice === quizData[currentQuestionIndex].answer) {
-        score++;
-        alert('正解！');
+        switch (quizData[currentQuestionIndex].difficulty) {
+            case '1':
+                score += 10;
+                alert(`正解です。\n${quizData[currentQuestionIndex].explanation}`);
+                break;
+            case '2':
+                score += 20;
+                alert(`正解です。\n${quizData[currentQuestionIndex].explanation}`);
+                break;
+            case '3':
+                score += 30;
+                alert(`正解です。\n${quizData[currentQuestionIndex].explanation}`);
+                break;
+            case '4':
+                score += 40;
+                alert(`正解です。\n${quizData[currentQuestionIndex].explanation}`);
+                break;
+            case '5':
+                score += 50;
+                alert(`正解です。\n${quizData[currentQuestionIndex].explanation}`);
+                break;
+            default:
+                break;
+        }
     } else {
-        alert('不正解！');
+        alert(`不正解です。\n${quizData[currentQuestionIndex].explanation}`);
     }
 
     currentQuestionIndex++;
